@@ -6,20 +6,29 @@ __author__ = "Scaffold by Jackson Goerner, Code by ______________"
 
 class PokemonBase:
 
-    def __init__(self, hp: int, poke_type) -> None:
-        raise NotImplementedError()
+    def __init__(self, hp: int, poke_type: str, attack: int, speed: int, defence: int, level: int, evolve_version: str, name: str) -> None:
+        self.hp = hp
+        self.poke_type = poke_type
+        self.attack = attack
+        self.speed = speed
+        self.defence = defence
+        self.level = level
+        self.evolve_version = evolve_version
+        self.name = name
 
     def is_fainted(self) -> bool:
-        raise NotImplementedError()
+        if self.hp == 0:
+            return True
+        return False
 
     def level_up(self) -> None:
-        raise NotImplementedError()
+        self.level += 1
 
     def get_speed(self) -> int:
-        raise NotImplementedError()
+        return self.speed
 
     def get_attack_damage(self) -> int:
-        raise NotImplementedError()
+        return self.attack
 
     def get_defence(self) -> int:
         raise NotImplementedError()
