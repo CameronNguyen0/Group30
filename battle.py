@@ -22,3 +22,5 @@ if __name__ == "__main__":
     t2 = PokeTeam.random_team("Barry", 1)
     print(b.battle(t1, t2))
 # hello it's amy
+
+# random
