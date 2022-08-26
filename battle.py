@@ -21,3 +21,4 @@ if __name__ == "__main__":
     t1.ai_type = PokeTeam.AI.USER_INPUT
     t2 = PokeTeam.random_team("Barry", 1)
     print(b.battle(t1, t2))
+# hello it's amy
