@@ -1,10 +1,12 @@
+from pokemon_base import PokemonBase
 """
 """
-__author__ = "Scaffold by Jackson Goerner, Code by ______________"
+__author__ = "Boss of task: Amy, Minions of the day: Ryan and Vonara"
 
-class Charizard:
-    pass
-
+#class Charizard(PokemonBase):
+    #def __init__(self, hp: int, attack: int, speed: int, level: int, name: str) -> None:
+        #PokemonBase.__init__(self, hp: int, attack: int)
+        
 class Charmander:
     pass
 
