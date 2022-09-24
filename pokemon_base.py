@@ -47,7 +47,8 @@ class PokemonBase(ABC):
         self.list_position = self.list_position_dict[self.poke_type]         # Defines the position of that Pokemon types for the Pokemon given its type.
         self.attack_multiplier = self.multiplier[self.list_position]         # Defines the attack multiplier of the Pokemon given it's position in Pokemon types.
         self.status_inflict = self.status_things[self.list_position]         # Define the status effect of the Pokemon's attack given it's position in Pokemon types.
-    
+        self.attack_self = False
+
     def get_hp(self) -> int:
         return self.hp
     
@@ -143,7 +144,6 @@ class PokemonBase(ABC):
         if self.status_effect == 'sleep':
             return None
 
-        attack_self = False
 
         # Step 2: Do the attack.
         # Calculates the effective attack that the attacking Pokemon would do on the defending Pokemon with the multiplier.
@@ -154,27 +154,32 @@ class PokemonBase(ABC):
         if self.status_effect == 'burn':
             effective_attack = effective_attack//2
 
-        # Call defend for the defending Pokemon to calculate how much HP is lost from the attack to them.
-        other.defend(effective_attack)
-
         # If status effect is confusion, then you have 50% chance to attack yourself.
         if self.status_effect == 'confusion':
             if RandomGen.random_chance(0.5) == True:    # Checking (with 50% chance) whether or not to not attack yourself.
-                attack_self = True    
+                self.attack_self = True    
                 # When attacking yourself, multiply your current attacking damage with the multiplier for your type.
-                self.defend(self.get_attack_damage() * self.multiplier[self.list_position][self.list_position])       
-            attack_self = False
+                self.defend(self.get_attack_damage() * self.multiplier[self.list_position][self.list_position])
+            else:
+                self.attack_self = False   
+
+        # Call defend for the defending Pokemon to calculate how much HP is lost from the attack to them.
+        if self.attack_self == False:
+            other.defend(effective_attack)
+        elif self.attack_self == True:
+            effective_attack = self.get_attack_damage() * self.attack_multiplier[self.list_position]
+            self.defend(effective_attack)
         
         # Step 3: Losing hp to status effects + applying status effects
         # Check if infliction of status effect occurs.
-        if attack_self == False and RandomGen.random_chance(0.2) == True:
+        if self.attack_self == False and RandomGen.random_chance(0.2) == True:
             other.status_effect = self.status_things[self.list_position]
             if self.status_inflict == 'burn':
                 other.lose_hp(1)
             if self.status_inflict == 'poison':
                 other.lose_hp(3)
         # Check if infliction of status effect occurs to self.
-        if attack_self == True and RandomGen.random_chance(0.2) == True:
+        if self.attack_self == True and RandomGen.random_chance(0.2) == True:
             self.status_effect = self.status_things[self.list_position]
             if self.status_inflict == 'burn':
                 self.lose_hp(1)             
