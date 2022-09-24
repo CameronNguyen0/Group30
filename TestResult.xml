@@ -1,118 +1,171 @@
-<testsuite errors="8" failures="0" name="" tests="8" time="0.004">
-<testcase classname="unittest.loader._FailedTest" name="test_battle" time="0.000">
-<error type="ImportError">ImportError: Failed to import test module: test_battle
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_battle.py", line 4, in &lt;module>
-    from pokemon import Charizard, Charmander, Eevee, Gastly, Squirtle, Venusaur
-  File "/Users/ryannguyen/fit-1008-group-30/pokemon.py", line 10
-    lost_hp = (12 + 1 * self.level) - self.hp
-    ^^^^^^^
-IndentationError: expected an indented block after function definition on line 8
-
+<testsuite errors="12" failures="1" name="" tests="17" time="0.103">
+<testcase classname="test_battle.TestBattle" name="test_basic_battle" time="0.003">
+<error type="AttributeError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_battle.py", line 11, in test_basic_battle
+    team1 = PokeTeam("Ash", [1, 1, 1, 0, 0], 0, PokeTeam.AI.ALWAYS_ATTACK)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
+    self.battle_
+AttributeError: 'PokeTeam' object has no attribute 'battle_'
 </error>
 </testcase>
-<testcase classname="unittest.loader._FailedTest" name="test_poke_team" time="0.000">
-<error type="ImportError">ImportError: Failed to import test module: test_poke_team
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_poke_team.py", line 3, in &lt;module>
-    from pokemon import Bulbasaur, Charizard, Charmander, Gastly, Squirtle, Eevee
-  File "/Users/ryannguyen/fit-1008-group-30/pokemon.py", line 10
-    lost_hp = (12 + 1 * self.level) - self.hp
-    ^^^^^^^
-IndentationError: expected an indented block after function definition on line 8
-
+<testcase classname="test_battle.TestBattle" name="test_complicated_battle" time="0.003">
+<error type="AttributeError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_battle.py", line 28, in test_complicated_battle
+    team1 = PokeTeam("Brock", [1, 1, 1, 1, 1], 2, PokeTeam.AI.SWAP_ON_SUPER_EFFECTIVE, criterion=Criterion.HP)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
+    self.battle_
+AttributeError: 'PokeTeam' object has no attribute 'battle_'
 </error>
 </testcase>
-<testcase classname="unittest.loader._FailedTest" name="test_pokemon" time="0.000">
-<error type="ImportError">ImportError: Failed to import test module: test_pokemon
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_pokemon.py", line 1, in &lt;module>
-    from pokemon import Venusaur
-  File "/Users/ryannguyen/fit-1008-group-30/pokemon.py", line 10
-    lost_hp = (12 + 1 * self.level) - self.hp
-    ^^^^^^^
-IndentationError: expected an indented block after function definition on line 8
-
+<testcase classname="test_poke_team.TestPokeTeam" name="test_battle_option_attack" time="0.011">
+<error type="AttributeError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 37, in test_battle_option_attack
+    t = PokeTeam("Wallace", [1, 0, 0, 0, 0], 1, PokeTeam.AI.ALWAYS_ATTACK)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
+    self.battle_
+AttributeError: 'PokeTeam' object has no attribute 'battle_'
 </error>
 </testcase>
-<testcase classname="unittest.loader._FailedTest" name="test_pokemon_base" time="0.000">
-<error type="ImportError">ImportError: Failed to import test module: test_pokemon_base
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_pokemon_base.py", line 3, in &lt;module>
-    from pokemon import Eevee, Gastly, Haunter
-  File "/Users/ryannguyen/fit-1008-group-30/pokemon.py", line 10
-    lost_hp = (12 + 1 * self.level) - self.hp
-    ^^^^^^^
-IndentationError: expected an indented block after function definition on line 8
-
+<testcase classname="test_poke_team.TestPokeTeam" name="test_random" time="0.005">
+<error type="NotImplementedError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 10, in test_random
+    t = PokeTeam.random_team("Cynthia", 0)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 38, in random_team
+    raise NotImplementedError()
+NotImplementedError
 </error>
 </testcase>
-<testcase classname="unittest.loader._FailedTest" name="test_tournament" time="0.000">
+<testcase classname="test_poke_team.TestPokeTeam" name="test_regen_team" time="0.008">
+<error type="NotImplementedError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 21, in test_regen_team
+    t = PokeTeam.random_team("Cynthia", 2, team_size=4, criterion=Criterion.HP)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 38, in random_team
+    raise NotImplementedError()
+NotImplementedError
+</error>
+</testcase>
+<testcase classname="test_poke_team.TestPokeTeam" name="test_special_mode_1" time="0.005">
+<error type="AttributeError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 43, in test_special_mode_1
+    t = PokeTeam("Lance", [1, 1, 1, 1, 1], 1, PokeTeam.AI.SWAP_ON_SUPER_EFFECTIVE)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
+    self.battle_
+AttributeError: 'PokeTeam' object has no attribute 'battle_'
+</error>
+</testcase>
+<testcase classname="test_poke_team.TestPokeTeam" name="test_string" time="0.011">
+<error type="AttributeError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 56, in test_string
+    t = PokeTeam("Dawn", [1, 1, 1, 1, 1], 2, PokeTeam.AI.RANDOM, Criterion.DEF)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
+    self.battle_
+AttributeError: 'PokeTeam' object has no attribute 'battle_'
+</error>
+</testcase>
+<testcase classname="test_pokemon.TestPokemon" name="test_venusaur_stats" time="0.005">
+<error type="TypeError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_pokemon.py", line 7, in test_venusaur_stats
+    v = Venusaur()
+TypeError: Venusaur.__init__() missing 1 required positional argument: 'non_evolved_pokemon'
+</error>
+</testcase>
+<testcase classname="test_pokemon_base.TestPokemonBase" name="test_cannot_init" time="0.000"/>
+<testcase classname="test_pokemon_base.TestPokemonBase" name="test_evolution" time="0.000"/>
+<testcase classname="test_pokemon_base.TestPokemonBase" name="test_hp" time="0.000"/>
+<testcase classname="test_pokemon_base.TestPokemonBase" name="test_level" time="0.001"/>
+<testcase classname="test_pokemon_base.TestPokemonBase" name="test_status" time="0.002">
+<failure type="AssertionError">Traceback (most recent call last):
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 44, in _callTestMethod
+    raise e
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
+    method()
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_pokemon_base.py", line 39, in test_status
+    self.assertEqual(e1.get_hp(), 10)
+AssertionError: 3 != 10
+</failure>
+</testcase>
+<testcase classname="unittest.loader._FailedTest" name="test_tournament" time="0.003">
 <error type="ImportError">ImportError: Failed to import test module: test_tournament
 Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 436, in _find_test_path
     module = self._get_module_from_name(name)
-  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 377, in _get_module_from_name
     __import__(name)
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_tournament.py", line 2, in &lt;module>
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tournament.py", line 2, in &lt;module>
     from tournament import Tournament
-  File "/Users/ryannguyen/fit-1008-group-30/tournament.py", line 9, in &lt;module>
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tournament.py", line 9, in &lt;module>
     from linked_list import LinkedList
 ModuleNotFoundError: No module named 'linked_list'
 
 </error>
 </testcase>
-<testcase classname="test_tower.TestTower" name="test_creation" time="0.001">
+<testcase classname="test_tower.TestTower" name="test_creation" time="0.023">
 <error type="NotImplementedError">Traceback (most recent call last):
-  File "/Users/ryannguyen/fit-1008-group-30/tests/base_test.py", line 47, in _callTestMethod
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
     raise e
-  File "/Users/ryannguyen/fit-1008-group-30/tests/base_test.py", line 42, in _callTestMethod
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
     method()
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_tower.py", line 11, in test_creation
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 11, in test_creation
     bt = BattleTower(Battle(verbosity=0))
-  File "/Users/ryannguyen/fit-1008-group-30/battle.py", line 12, in __init__
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 12, in __init__
     raise NotImplementedError()
 NotImplementedError
 </error>
 </testcase>
-<testcase classname="test_tower.TestTower" name="test_duplicates" time="0.000">
+<testcase classname="test_tower.TestTower" name="test_duplicates" time="0.006">
 <error type="NotImplementedError">Traceback (most recent call last):
-  File "/Users/ryannguyen/fit-1008-group-30/tests/base_test.py", line 47, in _callTestMethod
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
     raise e
-  File "/Users/ryannguyen/fit-1008-group-30/tests/base_test.py", line 42, in _callTestMethod
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
     method()
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_tower.py", line 32, in test_duplicates
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 32, in test_duplicates
     bt = BattleTower(Battle(verbosity=0))
-  File "/Users/ryannguyen/fit-1008-group-30/battle.py", line 12, in __init__
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 12, in __init__
     raise NotImplementedError()
 NotImplementedError
 </error>
 </testcase>
-<testcase classname="test_tower.TestTower" name="test_sort_lives" time="0.000">
+<testcase classname="test_tower.TestTower" name="test_sort_lives" time="0.005">
 <error type="NotImplementedError">Traceback (most recent call last):
-  File "/Users/ryannguyen/fit-1008-group-30/tests/base_test.py", line 47, in _callTestMethod
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
     raise e
-  File "/Users/ryannguyen/fit-1008-group-30/tests/base_test.py", line 42, in _callTestMethod
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
     method()
-  File "/Users/ryannguyen/fit-1008-group-30/tests/test_tower.py", line 68, in test_sort_lives
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 68, in test_sort_lives
     bt = BattleTower(Battle(verbosity=0))
-  File "/Users/ryannguyen/fit-1008-group-30/battle.py", line 12, in __init__
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 12, in __init__
     raise NotImplementedError()
 NotImplementedError
 </error>

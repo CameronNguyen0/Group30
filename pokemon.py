@@ -32,7 +32,7 @@ class Charizard(PokemonBase):
         self.level = 3
 
     
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """  This method resets HP when heal action is taken.
         :pre:
         :post:
@@ -87,10 +87,10 @@ class Charizard(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case is O(1).
         """
-        if get_defence(self) < damage:
-            lose_hp(self, 2*damage)
+        if self.get_defence() < damage:
+            self.lose_hp(2*damage)
         else: 
-            lose_hp(self, damage)
+            self.lose_hp(damage)
 
     def get_poke_name(self) -> str:
         """ This method retrieves the name of the Pokemon which is Charizard.
@@ -137,7 +137,7 @@ class Charmander(PokemonBase):
         """
         PokemonBase.__init__(self, 9, "fire")
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -187,10 +187,10 @@ class Charmander(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        if get_defence(self) < damage:
-            lose_hp(self, damage)
+        if self.get_defence() < damage:
+            self.lose_hp(damage)
         else: 
-            lose_hp(self, damage//2)
+            self.lose_hp(damage//2)
 
     def get_poke_name(self) -> str:
         """
@@ -239,7 +239,7 @@ class Venusaur(PokemonBase):
         PokemonBase.__init__(self, self.hp, "grass")
         self.level = 2
         
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -289,10 +289,10 @@ class Venusaur(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        if (get_defence(self) + 5) < damage:
-            lose_hp(self, damage)
+        if (self.get_defence() + 5) < damage:
+            self.lose_hp(damage)
         else: 
-            lose_hp(self, damage//2)
+            self.lose_hp(damage//2)
 
     def get_poke_name(self) -> str:
         """
@@ -335,7 +335,7 @@ class Bulbasaur(PokemonBase):
         """
         PokemonBase.__init__(self, 13, "grass")
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -385,10 +385,10 @@ class Bulbasaur(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        if (get_defence(self) + 5) < damage:
-            lose_hp(self, damage)
+        if (self.get_defence() + 5) < damage:
+            self.lose_hp(damage)
         else: 
-            lose_hp(self, damage//2)
+            self.lose_hp(damage//2)
 
     def get_poke_name(self) -> str:
         """
@@ -438,7 +438,7 @@ class Blastoise(PokemonBase):
         PokemonBase.__init__(self, self.hp, "water")
         self.level = 3
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -488,10 +488,10 @@ class Blastoise(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        if (get_defence(self)*2) < damage:
-            lose_hp(self, damage)
+        if (self.get_defence()*2) < damage:
+            self.lose_hp(damage)
         else: 
-            lose_hp(self, damage//2)
+            self.lose_hp(damage//2)
 
     def get_poke_name(self) -> str:
         """
@@ -535,7 +535,7 @@ class Squirtle(PokemonBase):
         """
         PokemonBase.__init__(self, 11, "water")
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -585,10 +585,10 @@ class Squirtle(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        if (get_defence(self)*2) < damage:
-            lose_hp(self, damage)
+        if (self.get_defence()*2) < damage:
+            self.lose_hp(damage)
         else: 
-            lose_hp(self, damage//2)
+            self.lose_hp(damage//2)
 
     def get_poke_name(self) -> str:
         """
@@ -638,7 +638,7 @@ class Gengar:
         PokemonBase.__init__(self, self.hp, "ghost")
         self.level = 3
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -689,7 +689,7 @@ class Gengar:
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        lose_hp(self, damage)
+        self.lose_hp(damage)
 
     def get_poke_name(self) -> str:
         """
@@ -735,7 +735,7 @@ class Haunter(PokemonBase):
         PokemonBase.__init__(self, self.hp, "ghost")
         self.level = 1
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
@@ -785,7 +785,7 @@ class Haunter(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        lose_hp(self, damage)
+        self.lose_hp(damage)
 
     def get_poke_name(self) -> str:
         """
@@ -831,7 +831,7 @@ class Gastly:
         """
         PokemonBase.__init__(self, 6, "ghost")
 
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         self.hp = (6 + self.level//2)
         
     def level_up(self) -> None:
@@ -881,7 +881,7 @@ class Gastly:
         :post: <not implemented>
         :complexity: Best case and worst case is O(1).
         """
-        lose_hp(self, damage)
+        self.lose_hp(damage)
 
     def get_poke_name(self) -> str:
         """ This method retrieves the name of the Pokemon which is Gastly.
@@ -920,19 +920,17 @@ class Gastly:
         return Haunter(self)
 
 
-class Eevee:
-    def __init__(self, non_evolved_pokemon: PokemonBase) -> None:
+class Eevee(PokemonBase):
+    def __init__(self) -> None:
         """ This method initialises Eevee to its base attributes.
         :pre: <not implemented>
         :post: <not implemented>
         :complexity: Best case and worst case is O(1).
         """
-        self.hp = non_evolved_pokemon.hp
-        self.status_effect = non_evolved_pokemon.status_effect
         PokemonBase.__init__(self, 10, "normal")
         self.level = 1
         
-    def reset_hp(self) -> None:
+    def heal(self) -> None:
         self.hp = 10
         
     def level_up(self) -> None:
@@ -977,8 +975,8 @@ class Eevee:
         :post: <not implemented>
         :complexity: Best case and worst case is O(1).
         """
-        if get_defence(self) < damage:
-            lose_hp(self, damage)
+        if self.get_defence() < damage:
+            self.lose_hp(damage)
 
     def get_poke_name(self) -> str:
         """ This method retrieves the name of the Pokemon which is Eevee.

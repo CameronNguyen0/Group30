@@ -1,7 +1,12 @@
+# python test_pokemon_base.py
+import sys
+sys.path.append('./')
+
 from random_gen import RandomGen
 from pokemon_base import PokemonBase
 from pokemon import Eevee, Gastly, Haunter
 from tests.base_test import BaseTest
+
 
 class TestPokemonBase(BaseTest):
 
