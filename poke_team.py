@@ -28,6 +28,9 @@ class PokeTeam:
         USER_INPUT = auto()
 
     def __init__(self, team_name: str, team_numbers: list[int], battle_mode: int, ai_type: PokeTeam.AI, criterion=None, criterion_value=None) -> None:
+        self.team_name = team_name
+        self.team_numbers = team_numbers
+        self.battle_
         raise NotImplementedError()
     
     @classmethod
