@@ -117,7 +117,8 @@ class PokemonBase(ABC):
         input HP.
         :pre: <not implemented>
         :post: <not implemented>
-        :complexity: <not implemented>
+        :complexity: Best = Worst = O(1)
+       
         """
         self.hp -= lost_hp
 
@@ -137,7 +138,7 @@ class PokemonBase(ABC):
         """ Given the other Pokemon's base, this method implements the attack procedure as stated in the specification.
         :pre: <not implemented>
         :post: <not implemented>
-        :complexity: <not implemented>
+        :complexity: Best = Worst = O(1)
         """
         # Step 1: Status effects on attack damage / redirecting attacks.
         # If the attacking Pokemon is asleep, stop the attack.
