@@ -1,96 +1,39 @@
-<testsuite errors="12" failures="0" name="" tests="17" time="0.085">
-<testcase classname="test_battle.TestBattle" name="test_basic_battle" time="0.017">
-<error type="AttributeError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_battle.py", line 11, in test_basic_battle
-    team1 = PokeTeam("Ash", [1, 1, 1, 0, 0], 0, PokeTeam.AI.ALWAYS_ATTACK)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
-    self.battle_
-AttributeError: 'PokeTeam' object has no attribute 'battle_'
+<testsuite errors="5" failures="0" name="" tests="10" time="0.004">
+<testcase classname="unittest.loader._FailedTest" name="test_battle" time="0.000">
+<error type="ImportError">ImportError: Failed to import test module: test_battle
+Traceback (most recent call last):
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_battle.py", line 2, in &lt;module>
+    from battle import Battle
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 6, in &lt;module>
+    from poke_team import Action, PokeTeam, Criterion
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
+    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
+                                                                                                    ^^
+SyntaxError: invalid syntax
+
 </error>
 </testcase>
-<testcase classname="test_battle.TestBattle" name="test_complicated_battle" time="0.003">
-<error type="AttributeError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_battle.py", line 28, in test_complicated_battle
-    team1 = PokeTeam("Brock", [1, 1, 1, 1, 1], 2, PokeTeam.AI.SWAP_ON_SUPER_EFFECTIVE, criterion=Criterion.HP)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
-    self.battle_
-AttributeError: 'PokeTeam' object has no attribute 'battle_'
+<testcase classname="unittest.loader._FailedTest" name="test_poke_team" time="0.000">
+<error type="ImportError">ImportError: Failed to import test module: test_poke_team
+Traceback (most recent call last):
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 1, in &lt;module>
+    from poke_team import Action, Criterion, PokeTeam
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
+    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
+                                                                                                    ^^
+SyntaxError: invalid syntax
+
 </error>
 </testcase>
-<testcase classname="test_poke_team.TestPokeTeam" name="test_battle_option_attack" time="0.010">
-<error type="AttributeError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 37, in test_battle_option_attack
-    t = PokeTeam("Wallace", [1, 0, 0, 0, 0], 1, PokeTeam.AI.ALWAYS_ATTACK)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
-    self.battle_
-AttributeError: 'PokeTeam' object has no attribute 'battle_'
-</error>
-</testcase>
-<testcase classname="test_poke_team.TestPokeTeam" name="test_random" time="0.002">
-<error type="NotImplementedError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 10, in test_random
-    t = PokeTeam.random_team("Cynthia", 0)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 38, in random_team
-    raise NotImplementedError()
-NotImplementedError
-</error>
-</testcase>
-<testcase classname="test_poke_team.TestPokeTeam" name="test_regen_team" time="0.003">
-<error type="NotImplementedError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 21, in test_regen_team
-    t = PokeTeam.random_team("Cynthia", 2, team_size=4, criterion=Criterion.HP)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 38, in random_team
-    raise NotImplementedError()
-NotImplementedError
-</error>
-</testcase>
-<testcase classname="test_poke_team.TestPokeTeam" name="test_special_mode_1" time="0.003">
-<error type="AttributeError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 43, in test_special_mode_1
-    t = PokeTeam("Lance", [1, 1, 1, 1, 1], 1, PokeTeam.AI.SWAP_ON_SUPER_EFFECTIVE)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
-    self.battle_
-AttributeError: 'PokeTeam' object has no attribute 'battle_'
-</error>
-</testcase>
-<testcase classname="test_poke_team.TestPokeTeam" name="test_string" time="0.003">
-<error type="AttributeError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 56, in test_string
-    t = PokeTeam("Dawn", [1, 1, 1, 1, 1], 2, PokeTeam.AI.RANDOM, Criterion.DEF)
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 33, in __init__
-    self.battle_
-AttributeError: 'PokeTeam' object has no attribute 'battle_'
-</error>
-</testcase>
-<testcase classname="test_pokemon.TestPokemon" name="test_venusaur_stats" time="0.007">
+<testcase classname="test_pokemon.TestPokemon" name="test_venusaur_stats" time="0.002">
 <error type="TypeError">Traceback (most recent call last):
   File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
     raise e
@@ -102,7 +45,7 @@ TypeError: Venusaur.__init__() missing 1 required positional argument: 'non_evol
 </error>
 </testcase>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_cannot_init" time="0.000"/>
-<testcase classname="test_pokemon_base.TestPokemonBase" name="test_evolution" time="0.001"/>
+<testcase classname="test_pokemon_base.TestPokemonBase" name="test_evolution" time="0.000"/>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_hp" time="0.000"/>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_level" time="0.000"/>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_status" time="0.000"/>
@@ -115,49 +58,29 @@ Traceback (most recent call last):
     __import__(name)
   File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tournament.py", line 2, in &lt;module>
     from tournament import Tournament
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tournament.py", line 9, in &lt;module>
-    from linked_list import LinkedList
-ModuleNotFoundError: No module named 'linked_list'
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tournament.py", line 7, in &lt;module>
+    from poke_team import PokeTeam
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
+    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
+                                                                                                    ^^
+SyntaxError: invalid syntax
 
 </error>
 </testcase>
-<testcase classname="test_tower.TestTower" name="test_creation" time="0.020">
-<error type="NotImplementedError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 11, in test_creation
-    bt = BattleTower(Battle(verbosity=0))
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 12, in __init__
-    raise NotImplementedError()
-NotImplementedError
-</error>
-</testcase>
-<testcase classname="test_tower.TestTower" name="test_duplicates" time="0.003">
-<error type="NotImplementedError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 32, in test_duplicates
-    bt = BattleTower(Battle(verbosity=0))
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 12, in __init__
-    raise NotImplementedError()
-NotImplementedError
-</error>
-</testcase>
-<testcase classname="test_tower.TestTower" name="test_sort_lives" time="0.003">
-<error type="NotImplementedError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 68, in test_sort_lives
-    bt = BattleTower(Battle(verbosity=0))
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 12, in __init__
-    raise NotImplementedError()
-NotImplementedError
+<testcase classname="unittest.loader._FailedTest" name="test_tower" time="0.000">
+<error type="ImportError">ImportError: Failed to import test module: test_tower
+Traceback (most recent call last):
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\henry\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 2, in &lt;module>
+    from poke_team import Criterion, PokeTeam
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
+    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
+                                                                                                    ^^
+SyntaxError: invalid syntax
+
 </error>
 </testcase>
 </testsuite>
