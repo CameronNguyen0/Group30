@@ -174,7 +174,7 @@ class PokeTeam:
         
     
     @classmethod
-    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
+    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs) -> None:
         """ Create a random team given the rules shown in specification.
         :pre: The input of any other additional element must of type within the class Criterion.
         :post:
@@ -207,7 +207,7 @@ class PokeTeam:
         :complexity:
         """
          ###
-         if evolved change key to -0.1
+        #if evolved change key to -0.1
          
 
         # depending on the battle mode, position of pokemon in a team is arranged accordingly

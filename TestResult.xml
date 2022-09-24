@@ -1,4 +1,4 @@
-<testsuite errors="5" failures="0" name="" tests="10" time="0.004">
+<testsuite errors="4" failures="0" name="" tests="10" time="0.001">
 <testcase classname="unittest.loader._FailedTest" name="test_battle" time="0.000">
 <error type="ImportError">ImportError: Failed to import test module: test_battle
 Traceback (most recent call last):
@@ -10,10 +10,9 @@ Traceback (most recent call last):
     from battle import Battle
   File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\battle.py", line 6, in &lt;module>
     from poke_team import Action, PokeTeam, Criterion
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
-    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
-                                                                                                    ^^
-SyntaxError: invalid syntax
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 4, in &lt;module>
+    from array_list import ArrayList                # Module for accessing ArrayList properties.
+ModuleNotFoundError: No module named 'array_list'
 
 </error>
 </testcase>
@@ -26,24 +25,13 @@ Traceback (most recent call last):
     __import__(name)
   File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_poke_team.py", line 1, in &lt;module>
     from poke_team import Action, Criterion, PokeTeam
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
-    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
-                                                                                                    ^^
-SyntaxError: invalid syntax
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 4, in &lt;module>
+    from array_list import ArrayList                # Module for accessing ArrayList properties.
+ModuleNotFoundError: No module named 'array_list'
 
 </error>
 </testcase>
-<testcase classname="test_pokemon.TestPokemon" name="test_venusaur_stats" time="0.002">
-<error type="TypeError">Traceback (most recent call last):
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 47, in _callTestMethod
-    raise e
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\base_test.py", line 42, in _callTestMethod
-    method()
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_pokemon.py", line 7, in test_venusaur_stats
-    v = Venusaur()
-TypeError: Venusaur.__init__() missing 1 required positional argument: 'non_evolved_pokemon'
-</error>
-</testcase>
+<testcase classname="test_pokemon.TestPokemon" name="test_venusaur_stats" time="0.000"/>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_cannot_init" time="0.000"/>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_evolution" time="0.000"/>
 <testcase classname="test_pokemon_base.TestPokemonBase" name="test_hp" time="0.000"/>
@@ -60,10 +48,9 @@ Traceback (most recent call last):
     from tournament import Tournament
   File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tournament.py", line 7, in &lt;module>
     from poke_team import PokeTeam
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
-    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
-                                                                                                    ^^
-SyntaxError: invalid syntax
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 4, in &lt;module>
+    from array_list import ArrayList                # Module for accessing ArrayList properties.
+ModuleNotFoundError: No module named 'array_list'
 
 </error>
 </testcase>
@@ -76,10 +63,9 @@ Traceback (most recent call last):
     __import__(name)
   File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\tests\test_tower.py", line 2, in &lt;module>
     from poke_team import Criterion, PokeTeam
-  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 177
-    def random_team(cls, team_name: str, battle_mode: int, team_size=None, ai_mode=None, **kwargs): -> None
-                                                                                                    ^^
-SyntaxError: invalid syntax
+  File "C:\Amy\MIPS ASSIGNMENT\fit-1008-group-30\poke_team.py", line 4, in &lt;module>
+    from array_list import ArrayList                # Module for accessing ArrayList properties.
+ModuleNotFoundError: No module named 'array_list'
 
 </error>
 </testcase>

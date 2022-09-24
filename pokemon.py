@@ -20,16 +20,22 @@ __author__ = "Scaffold by Jackson Goerner, Code by Amy Dang and Vonara"
 class Charizard(PokemonBase):
 
     # Initialiser method for Charizard HPs and other attributes.
-    def __init__(self, non_evolved_pokemon: PokemonBase) -> None:
+    def __init__(self, hp = None, status_effect = None) -> None:
         """ This method initialises Charizard to its base attributes.
         :pre: <not implemented>
         :post: <not implemented>
         :complexity: Best case and worst case is O(1).
         """  
-        self.hp = non_evolved_pokemon.hp
-        self.status_effect = non_evolved_pokemon.status_effect
+        self.hp = hp
+        if hp == None:
+            self.hp = 15
+
         PokemonBase.__init__(self, self.hp, "fire")
+
         self.level = 3
+        
+        self.status_effect = status_effect
+
 
     
     def heal(self) -> None:
@@ -155,6 +161,7 @@ class Charmander(PokemonBase):
         self.level += 1
         self.hp = (8 + 1 * self.level) - lost_hp
 
+
     def get_speed(self) -> int:
         """
         :pre: <not implemented>
@@ -225,19 +232,25 @@ class Charmander(PokemonBase):
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        return Charizard(self)
+        return Charizard(self.hp, self.status_effect)
 
 class Venusaur(PokemonBase):
-    def __init__(self, non_evolved_pokemon: PokemonBase) -> None:
+    def __init__(self, hp = None, status_effect = None) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        self.hp = non_evolved_pokemon.hp
-        self.status_effect = non_evolved_pokemon.status_effect
+
+        self.hp = hp
+        if hp == None:
+            self.hp = 21
+
         PokemonBase.__init__(self, self.hp, "grass")
+
         self.level = 2
+        
+        self.status_effect = status_effect
         
     def heal(self) -> None:
         """
@@ -353,6 +366,9 @@ class Bulbasaur(PokemonBase):
         self.level += 1
         self.hp = (12 + 1 * self.level) - lost_hp
 
+        if self.level == 2:
+             self.get_evolved_version()
+
     def get_speed(self) -> int:
         """
         :pre: <not implemented>
@@ -417,13 +433,13 @@ class Bulbasaur(PokemonBase):
         return True
 
     ########## IDK IF CORRECT ########################
-    def get_evolved_version(self) -> PokemonBase:
+    def get_evolved_version(self) -> None:
         """
         :pre: <not implemented>
         :post: <not implemented>
         :complexity: Best case and worst case if O(1).
         """
-        return Venusaur(self)
+        return Venusaur(self.hp, self.status_effect)
 
 
 class Blastoise(PokemonBase):
