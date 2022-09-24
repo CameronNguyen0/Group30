@@ -1,5 +1,5 @@
 from random_gen import RandomGen
-from pokemon_base import PokemonBase, PokeType
+from pokemon_base import PokemonBase
 from pokemon import Eevee, Gastly, Haunter
 from tests.base_test import BaseTest
 
@@ -7,7 +7,7 @@ class TestPokemonBase(BaseTest):
 
     def test_cannot_init(self):
         """Tests that we cannot initialise PokemonBase, and that it raises the correct error."""
-        self.assertRaises(TypeError, lambda: PokemonBase(30, PokeType.FIRE))
+        self.assertRaises(TypeError, lambda: PokemonBase(30, "fire"))
 
     def test_level(self):
         e = Eevee()
