@@ -1,8 +1,8 @@
+
 # Importing modules required.
 from __future__ import annotations      # Module used for getting functionalities within the newer version of Python.
 from abc import ABC, abstractmethod     # Module used for defining abstract methods.
-from random_gen import RandomGen        # Module used for generating random values.
-
+import random_gen                       # Module used for generating random values.
 
 """
 File Description:
@@ -18,10 +18,8 @@ Contributions: Khanh Gia (Ryan) Nguyen, Amy Dang
 __author__ = "Scaffold by Jackson Goerner, Code by Amy Dang"
 
 
-
 # Implementation of PokemonBase class.
 class PokemonBase(ABC):
-
     # Table of multipliers for each Pokemon attack (refer to Page 3 of the Assignment 2 Specification Sheet for more detail).
     multiplier = [[1, 2, 0.5, 1, 1], [0.5, 1, 2, 1, 1], [2, 0.5, 1, 1, 1], [1.25, 1.25, 1.25, 2, 0], [1.25, 1.25, 1.25, 0, 1]]
 
@@ -30,7 +28,7 @@ class PokemonBase(ABC):
 
     # A dictionary of the order of the position of the Pokemon types. # Only allowed list for calculations.
     list_position_dict = {'fire': 0, 'grass': 1, 'water': 2, 'ghost': 3, 'normal': 4}
-    
+
     # Initialiser method or constructor for creating a PokemonBase for a certain Pokemon.
     def __init__(self, hp: int, poke_type: str) -> None:
         """ Constructor for the PokemonBase of a Pokemon and set the initialised values into that PokemonBase.
@@ -38,7 +36,6 @@ class PokemonBase(ABC):
         :post: <not implemented>
         :complexity: The best and worst case is O(1), because we are just defining variables.
         """
-        
         self.hp = hp                                                    # Defines the HP of the Pokemon.       
         self.poke_type = poke_type                                      # Defines the type of the Pokemon.
         self.level = 1                                                  # Defines the level of the Pokemon (initialised to level 1).
@@ -46,8 +43,7 @@ class PokemonBase(ABC):
         self.list_position = list_position_dict[self.poke_type]         # Defines the position of that Pokemon types for the Pokemon given its type.
         self.attack_multiplier = multiplier[self.list_position]         # Defines the attack multiplier of the Pokemon given it's position in Pokemon types.
         self.status_inflict = status_things[self.list_position]         # Define the status effect of the Pokemon's attack given it's position in Pokemon types.
-        
-
+    
     # Method to determine if the Pokemon has fainted.
     def is_fainted(self) -> bool:
         """ Pokemon health equalling 0 will result in fainting, and this method implements it.
@@ -63,7 +59,7 @@ class PokemonBase(ABC):
         """ This abstract method acts as a template to level up a Pokemon; its implementation is abstract because changing 
         the level of a Pokemon affects the HP of that Pokemon, which requires changing with each Pokemon, and it is unique
         to that Pokemon.
-        :pre: <not implemented>
+        :pre: <not >implemented
         :post: <not implemented>
         :complexity: 
         """
@@ -154,20 +150,20 @@ class PokemonBase(ABC):
             if RandomGen.random_chance(0.5) == True:    # Checking (with 50% chance) whether or not to not attack yourself.
                 attack_self = True    
                 # When attacking yourself, multiply your current attacking damage with the multiplier for your type.
-                self.defend(self, self.get_attack_damage * multiplier[self.list_position][self.list_position])       
+                defend(self, self.get_attack_damage * multiplier[self.list_position][self.list_position])       
             attack_self = False
         
         # Step 3: Losing hp to status effects + applying status effects
         # Check if infliction of status effect occurs.
         if attack_self == False and RandomGen.random_chance(0.2) == True:
-            other.status_effect = status_things[self.list_position]
+            other.status_effect = status_things[list_position]
             if self.status_inflict == 'burn':
                 other.lose_hp(1)
             if self.status_inflict == 'poison':
                 other.lose_hp(3)
         # Check if infliction of status effect occurs to self.
         if attack_self == True and RandomGen.random_chance(0.2) == True:
-            self.status_effect = status_things[self.list_position]
+            self.status_effect = status_things[list_position]
             if self.status_inflict == 'burn':
                 self.lose_hp(1)             
             if self.status_inflict == 'poison':
@@ -217,4 +213,3 @@ class PokemonBase(ABC):
         :complexity: <not implemented>
         """
         pass
-
